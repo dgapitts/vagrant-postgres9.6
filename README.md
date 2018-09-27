@@ -5,10 +5,10 @@ The pgbench and postgres / oracle gotcha demo scripts have been moved to dgapitt
 * check basic psql access (details below)
 * run "git setup and clone for pg-scripts" (delails below)
 
-For sample install details and a potential bug around 
+For sample install details and a potential bug around "Box 'centos/7' could not be found"
 https://gist.github.com/dgapitts/e1a99421e1cd96b43f668ec0d1e7ac20
 
-There are a couple of prerequistes to be install on the hostmachine (i.e. your laptop):
+There are a couple of prerequistes to be install on the host machine (i.e. your laptop):
 * VirtualBox Download and Install from https://www.virtualbox.org/wiki/Downloads
 * Vagrant Download and Install from https://www.vagrantup.com/downloads.html
 
