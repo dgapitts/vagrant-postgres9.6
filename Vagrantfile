@@ -8,4 +8,5 @@ Vagrant.configure("2") do |config|
   end
   config.vm.box = "centos/7"
   config.vm.network :forwarded_port, guest: 5432, host: 9500
+  config.vm.provision :shell, :path => "provision.sh"
 end
