@@ -1,7 +1,9 @@
 ## Overview vagrant-postgres9.6
 Automated vagrant postgres9.6 centos-7 setup
 
-The pgbench and postgres / oracle gotcha demo scripts have been moved to dgapitts/pg-scripts i.e. as postgres user
+The pgbench and postgres / oracle gotcha demo scripts have been moved to dgapitts/pg-scripts i.e. after setting up you vagrant-postgres9.6 VM (running Centos-7) then as postgres user:
+* check basic psql access (details below)
+* run "git setup and clone for pg-scripts" (delails below)
 
 For sample install details and a potential bug around 
 https://gist.github.com/dgapitts/e1a99421e1cd96b43f668ec0d1e7ac20
@@ -23,13 +25,14 @@ Type "help" for help.
 postgres=#
 ```
  
-## git setup and clone for pg-scripts as postgres user
+## Details git setup and clone for pg-scripts as postgres user
 
+```
 cd ~
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
 << copy results into your https://github.com/settings/profile - SSH >>
  
 git clone git@github.com:dgapitts/pg-scripts.git
-
+```
 
