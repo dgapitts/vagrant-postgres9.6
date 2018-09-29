@@ -21,6 +21,7 @@ then
   /usr/pgsql-9.6/bin/postgresql96-setup initdb
   systemctl enable postgresql-9.6.service
   systemctl start postgresql-9.6.service 
+  yum -y install python-psycopg2
 
 
 
