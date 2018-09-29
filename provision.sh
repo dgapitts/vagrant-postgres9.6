@@ -22,8 +22,11 @@ then
   systemctl enable postgresql-9.6.service
   systemctl start postgresql-9.6.service 
   yum -y install python-psycopg2
-
-
+  
+  yum -y install sysstat
+  systemctl start sysstat 
+  systemctl enable sysstat
+  sed -i 's#*/10#*/1#g' /etc/cron.d/sysstat
 
 else
   echo "already installed flag set : /home/vagrant/already-installed-flag"
