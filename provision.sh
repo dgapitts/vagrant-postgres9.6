@@ -3,6 +3,7 @@ if [ ! -f /home/vagrant/already-installed-flag ]
 then
   echo "ADD EXTRA ALIAS VIA .bashrc"
   cat /vagrant/bashrc.append.txt >> /home/vagrant/.bashrc
+  cat /vagrant/bashrc.append.txt >> /root/.bashrc
   #echo "GENERAL YUM UPDATE"
   #yum -y update
   #echo "INSTALL GIT"
@@ -21,8 +22,13 @@ then
   /usr/pgsql-9.6/bin/postgresql96-setup initdb
   systemctl enable postgresql-9.6.service
   systemctl start postgresql-9.6.service 
-
-
+  yum -y install python-psycopg2
+  cat /vagrant/bashrc.append.txt >> /var/lib/pgsql/.bashrc
+  
+  yum -y install sysstat
+  systemctl start sysstat 
+  systemctl enable sysstat
+  sed -i 's#*/10#*/1#g' /etc/cron.d/sysstat
 
 else
   echo "already installed flag set : /home/vagrant/already-installed-flag"
