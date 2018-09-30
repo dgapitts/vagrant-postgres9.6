@@ -1,4 +1,3 @@
-alias vi='/usr/bin/vim'
 alias h='history'
 alias h40='history|tail -40'
 alias hl='history|less'
