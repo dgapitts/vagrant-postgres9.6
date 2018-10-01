@@ -30,6 +30,8 @@ then
   systemctl enable sysstat
   sed -i 's#*/10#*/1#g' /etc/cron.d/sysstat
 
+  /vagrant/quick-start-setup-pg-ora-demo-scripts.sh
+
 else
   echo "already installed flag set : /home/vagrant/already-installed-flag"
 fi
