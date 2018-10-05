@@ -19,6 +19,12 @@ then
   rpm -ivh https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-centos96-9.6-3.noarch.rpm
   yum -y update
   yum -y install postgresql96 postgresql96-server postgresql96-libs postgresql96-contrib postgresql96-devel
+  
+  # default pg_hba.conf doesn't allow md5 i.e. password based authentication 
+  #sudo cp /vagrant/pg_hba.conf /tmp/pg_hba.conf
+  #sudo su -c "cp -p /var/lib/pgsql/9.6/data/pg_hba.conf /var/lib/pgsql/9.6/data/pg_hba.conf.`date '+%Y%m%d-%H%M'`.bak" -s /bin/sh postgres
+  #sudo su -c "cat /tmp/pg_hba.conf > /var/lib/pgsql/9.6/data/pg_hba.conf" -s /bin/sh postgres
+
   /usr/pgsql-9.6/bin/postgresql96-setup initdb
   systemctl enable postgresql-9.6.service
   systemctl start postgresql-9.6.service 
