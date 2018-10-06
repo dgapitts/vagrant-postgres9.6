@@ -45,6 +45,11 @@ then
   service postfix restart
   systemctl start postgresql-9.6.service 
 
+  cp /vagrant/update_alluser_passwords_from_changeme.* /tmp
+  su -c "cp -p /tmp/update_alluser_passwords_from_changeme.* ~" -s /bin/sh postgres
+  su -c "chmod 700 ~/update_alluser_passwords_from_changeme.sh"  -s /bin/sh postgres
+  #su -c "~/update_alluser_passwords_from_changeme.sh <new-secure-password>" -s /bin/sh postgres
+
   sudo cat /vagrant/environment >> /etc/environment
 
 else
