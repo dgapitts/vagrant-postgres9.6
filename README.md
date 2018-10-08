@@ -39,3 +39,38 @@ git clone git@github.com:dgapitts/pg-ora-demo-scripts.git
 Reference:
 * "dgapitts/notes for my pg-ora-demo-scripts repro developement and tests" https://gist.github.com/dgapitts/1ca7e2eb4dfa475b1ffe1786277f7159
 * "dgapitts/vagrant-postgres9.6"  https://github.com/dgapitts/vagrant-postgres9.6
+
+## Post setup step1 - choose strong password for postgres and bench1 user
+
+Even though this is a private VM, the ./update_alluser_passwords_from_changeme.sh will enable you to simple add a strong password (and will update the postgres ~/.pgpass file) 
+
+```
+~/projects/vagrant-postgres9.6 $ vagrant ssh
+sudo su - sudo su - p[pg96centos7:vagrant:~] # sudo su - postgres
+Last login: Sat Oct  6 20:40:06 UTC 2018
+[pg96centos7:postgres:~] # ./update_alluser_passwords_from_changeme.sh M3LdCB4Qd7S4eLve
+ALTER ROLE
+ALTER ROLE
+[pg96centos7:postgres:~] # cat ~/.pgpass
+# hostname:port:database:username:password
+localhost:5432:postgres:postgres:M3LdCB4Qd7S4eLve
+localhost:5432:bench1:bench1:M3LdCB4Qd7S4eLve
+```
+checking bench1 user access
+```
+[pg96centos7:postgres:~] # psql -U bench1
+psql (9.6.10)
+Type "help" for help.
+
+bench1=> exit
+bench1-> \q
+```
+and finally you check postgres user access:
+```
+[pg96centos7:postgres:~] # psql -U postgres
+psql (9.6.10)
+Type "help" for help.
+
+postgres=# \q
+```
+
