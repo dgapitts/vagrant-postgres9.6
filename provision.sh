@@ -30,6 +30,7 @@ then
   systemctl start postgresql-9.6.service 
   yum -y install python-psycopg2
   cat /vagrant/bashrc.append.txt >> /var/lib/pgsql/.bash_profile
+  echo 'export PATH="$PATH:/usr/pgsql-9.6/bin"' >> /var/lib/pgsql/.bash_profile
   
   yum -y install sysstat
   systemctl start sysstat 
@@ -51,6 +52,10 @@ then
   #su -c "~/update_alluser_passwords_from_changeme.sh <new-secure-password>" -s /bin/sh postgres
 
   sudo cat /vagrant/environment >> /etc/environment
+  #cp /vagrant/quick-start-setup-pg-ora-demo-scripts.sh /tmp
+  #cp /vagrant/quick-start-setup-pg-ora-demo-scripts.sql /tmp
+  #cp /vagrant/update_alluser_passwords_from_changeme.sh /tmp
+  #cp /vagrant/update_alluser_passwords_from_changeme.sql /tmp
 
 else
   echo "already installed flag set : /home/vagrant/already-installed-flag"
