@@ -6,15 +6,14 @@ then
   cat /vagrant/bashrc.append.txt >> /root/.bashrc
   #echo "GENERAL YUM UPDATE"
   #yum -y update
-  #echo "INSTALL GIT"
+  #echo "INSTALL GIT and bc"
   yum -y install git
-  #echo "INSTALL VIM"
-  #yum -y install vim
+  yum -y install bc  
   #echo "INSTALL TREE"
   yum -y install tree
   #echo "INSTALL unzip curl wget"
   yum  -y install unzip curl wget
-
+ 
   # https://gist.github.com/Ch4s3/d2270e8f3d30cadcce859b84d707c794 install-postgres-9.6-centos7.md
   rpm -ivh https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-centos96-9.6-3.noarch.rpm
   #yum -y update
