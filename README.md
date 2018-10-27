@@ -74,3 +74,30 @@ Type "help" for help.
 postgres=# \q
 ```
 
+## Post setup - optional steps if you want to develop and enhancements
+
+As vagrant run - developer-option-part1-postgres-user-keygen-run-as-vagrant.sh
+
+As postgres run - developer-option-part2-setup-pg-ora-demo-scripts-run-as-postgres.sh
+
+You can then make code enhancements
+
+```
+[pg96centos7:postgres:~/pg-ora-demo-scripts] # git config --global user.email "dgapitts@gmail.com"
+[pg96centos7:postgres:~/pg-ora-demo-scripts] # git config --global user.name "Dave Pitts"
+[pg96centos7:postgres:~/pg-ora-demo-scripts] # git commit -m "fix bug for pgmon/act_trans.sql - wrong filename"
+[develop 5e7539c] fix bug for pgmon/act_trans.sql - wrong filename
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[pg96centos7:postgres:~/pg-ora-demo-scripts] # git push
+Counting objects: 7, done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 396 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To git@github.com:dgapitts/pg-ora-demo-scripts.git
+   17b99de..5e7539c  develop -> develop
+```
+
+
+
+NB This documentation and process probably still needs fine tuning and further testing but initial tests worked for me :)
