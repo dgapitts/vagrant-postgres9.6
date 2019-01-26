@@ -35,6 +35,7 @@ cat ~/.ssh/id_rsa.pub
 << copy results into your https://github.com/settings/profile - SSH >>
 
 git clone git@github.com:dgapitts/pg-ora-demo-scripts.git
+```
 
 Reference:
 * "dgapitts/notes for my pg-ora-demo-scripts repro developement and tests" https://gist.github.com/dgapitts/1ca7e2eb4dfa475b1ffe1786277f7159
