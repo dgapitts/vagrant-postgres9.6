@@ -15,7 +15,12 @@ then
   yum  -y install unzip curl wget
 
   # https://gist.github.com/Ch4s3/d2270e8f3d30cadcce859b84d707c794 install-postgres-9.6-centos7.md
-  rpm -ivh https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+  # rpm -ivh https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+
+  # https://yum.postgresql.org/repopackages.php#pg96
+  # As of 15 April 2019, there is only one repository RPM per distro, and it includes repository information for all available PostgreSQL releases.
+  rpm -ivh https://yum.postgresql.org/9.6/redhat/rhel-7.3-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
   yum -y update
   yum -y install postgresql96 postgresql96-server postgresql96-libs postgresql96-contrib postgresql96-devel
   /usr/pgsql-9.6/bin/postgresql96-setup initdb
